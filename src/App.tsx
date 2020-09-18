@@ -2,14 +2,18 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { View, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { Roboto, Roboto_500Medium, useFonts } from '@expo-google-fonts/roboto';
+import {
+  RobotoSlab_400Regular,
+  RobotoSlab_500Medium,
+  useFonts,
+} from '@expo-google-fonts/roboto-slab';
 import { AppLoading } from 'expo';
 import Routes from './routes';
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
-    Roboto_400Regular,
-    Roboto_500Medium,
+    regular: RobotoSlab_400Regular,
+    medium: RobotoSlab_500Medium,
   });
 
   if (!fontsLoaded) {
