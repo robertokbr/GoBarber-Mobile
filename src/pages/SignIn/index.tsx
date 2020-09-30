@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   KeyboardAvoidingView,
   Image,
@@ -7,12 +7,18 @@ import {
   ScrollView,
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 import * as S from './styles';
 import logoImg from '../../assets/logo.png';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
 const SignIn: React.FC = () => {
+  const navigation = useNavigation();
+  const handleNavigate = useCallback(() => {
+    navigation.navigate('SignUp');
+  }, [navigation]);
+
   return (
     <>
       <KeyboardAvoidingView
@@ -43,14 +49,14 @@ const SignIn: React.FC = () => {
                 console.log(true);
               }}
             >
-              <S.ForgotPasswordText>Esquci minha senha</S.ForgotPasswordText>
+              <S.ForgotPasswordText>Esqueci minha senha</S.ForgotPasswordText>
             </S.ForgotPassword>
           </S.Container>
         </ScrollView>
       </KeyboardAvoidingView>
-      <S.CreateAccountButton>
-        <S.CreateAccountButtonText>Criar conta</S.CreateAccountButtonText>
+      <S.CreateAccountButton onPress={handleNavigate}>
         <Feather name="log-in" size={20} color="#ff9000" />
+        <S.CreateAccountButtonText>Criar conta</S.CreateAccountButtonText>
       </S.CreateAccountButton>
     </>
   );
