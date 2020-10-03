@@ -28,7 +28,7 @@
 </p>
 
 <p  align="center">
- <img src="https://github.com/robertokbr/GoBarber-Mobile/blob/master/.Github/channels.PNG" width="300"/> <img src="https://github.com/robertokbr/GoBarber-Mobile/blob/master/.Github/home.PNG" width="300"/>
+ <img src="https://github.com/robertokbr/GoBarber-Mobile/blob/master/.GIthub/IMG_4947.PNG" width="300"/> <img src="https://github.com/robertokbr/GoBarber-Mobile/blob/master/.GIthub/IMG_4948.PNG" width="300"/> <img src="https://github.com/robertokbr/GoBarber-Mobile/blob/master/.GIthub/IMG_4951.PNG" width="300"/>
 </p>
 
 
@@ -48,9 +48,7 @@
 
 ## 🎈 Objective of the project
 
-* Study of the useMemo hook
-* Application of the stickyHeaderIndices property of FlatList
-* Study of Expo-cli
+* Study the development of a application from the scratch
 
 ## :information_source: How To Use
 
