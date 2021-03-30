@@ -3,6 +3,7 @@ import React from 'react';
 import { View, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import {
+  RobotoSlab_300Light,
   RobotoSlab_400Regular,
   RobotoSlab_500Medium,
   useFonts,
@@ -13,6 +14,7 @@ import AppProvider from './hooks';
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
+    light: RobotoSlab_300Light,
     regular: RobotoSlab_400Regular,
     medium: RobotoSlab_500Medium,
   });
