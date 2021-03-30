@@ -15,6 +15,7 @@ export const HeaderTitle = styled.Text`
   font-size: 20px;
   font-family: light;
   line-height: 28px;
+  flex: 1;
 `;
 
 export const UserName = styled.Text`
