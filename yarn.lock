@@ -7455,6 +7455,11 @@ react-native-appearance@~0.3.3:
     invariant "^2.2.4"
     use-subscription "^1.0.0"
 
+react-native-date-picker@^3.2.10:
+  version "3.2.10"
+  resolved "https://registry.yarnpkg.com/react-native-date-picker/-/react-native-date-picker-3.2.10.tgz#5e690db8e628255d8390e33b1e6f8fa9477f6fb9"
+  integrity sha512-/fA+htnZcr3rBw3eaOR/DvMwGLDTg59MCiiluin5YcHBxNZQYs/uYp/l6Hf719qZXndPGcixS46YIgso4Jf4gg==
+
 react-native-gesture-handler@~1.6.0:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.6.1.tgz#678e2dce250ed66e93af409759be22cd6375dd17"
