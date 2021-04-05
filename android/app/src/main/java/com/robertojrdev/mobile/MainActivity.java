@@ -1,4 +1,4 @@
-package com.mobile;
+package com.robertojrdev.mobile;
 
 import android.os.Bundle;
 
