@@ -7,6 +7,12 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "com.robertojrdev.mobile"
+    },
+    "ios": {
+      "bundleIdentifier": "com.robertojrdev.mobile"
+    }
   }
 }
