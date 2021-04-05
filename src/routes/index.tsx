@@ -4,6 +4,7 @@ import { ActivityIndicator } from 'react-native';
 import { useAuth } from '../hooks/auth';
 import PrivateRoutes from './private.routes';
 import PublicRoutes from './public.routes';
+import TabRoutes from './tab.routes';
 
 const Routes: React.FC = () => {
   const { user, loading } = useAuth();
