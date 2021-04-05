@@ -11,7 +11,7 @@ export const Container = styled.View`
   flex: 1;
 `;
 
-export const ProfileButton = styled(RectButton)``;
+export const ProfileButton = styled.TouchableOpacity``;
 
 export const ProvidersList = styled(FlatList as new () => FlatList<IUser>)`
   padding: 32px 24px 0;

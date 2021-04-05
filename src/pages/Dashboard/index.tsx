@@ -1,6 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Text } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 import { useAuth } from '../../hooks/auth';
@@ -12,7 +10,7 @@ import IUser from '../../models/IUser';
 import api from '../../services/api';
 
 const Dashboard: React.FC = () => {
-  const { signOut, user } = useAuth();
+  const { user } = useAuth();
   const navigation = useNavigation();
 
   const [providers, setProviders] = useState<IUser[]>([]);
@@ -38,14 +36,14 @@ const Dashboard: React.FC = () => {
     <S.Container>
       <Header title="Bem vindo!" subTitle={user.name}>
         <S.ProfileButton onPress={handleNavigate}>
-          <CustomAvatar avatar={user.avatar_url} />
+          <CustomAvatar userName={user.name} avatar={user.avatar_url} />
         </S.ProfileButton>
       </Header>
       <S.ProvidersList
         data={providers}
         keyExtractor={provider => provider.id}
         ListHeaderComponent={
-          <S.ProviderListTitle>Cabeleireiros</S.ProviderListTitle>
+          <S.ProviderListTitle>Barbeiros</S.ProviderListTitle>
         }
         renderItem={({ item: provider, index }) => (
           <S.ProviderContainer
@@ -58,6 +56,7 @@ const Dashboard: React.FC = () => {
                 height: 72,
                 borderRadius: 36,
               }}
+              userName={provider.name}
               avatar={provider.avatar_url}
             />
             <S.ProviderInfo>
