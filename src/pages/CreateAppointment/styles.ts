@@ -7,6 +7,15 @@ interface ListProps {
   isSelected: boolean;
 }
 
+interface HourPops {
+  available: boolean;
+  selected: boolean;
+}
+
+interface AppointmentButtonProps {
+  isEnabled: boolean;
+}
+
 export const Container = styled.View`
   flex: 1;
 `;
@@ -36,26 +45,70 @@ export const ProviderName = styled.Text<Omit<ListProps, 'isTheLast'>>`
   margin-left: 8px;
 `;
 
-export const CalendarContainer = styled.View``;
+export const CalendarContainer = styled.View`
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+`;
 
-export const CalendarTitle = styled.Text`
+export const Title = styled.Text`
   font-family: medium;
   font-size: 24px;
   margin: 0 24px 24px;
   color: #fff;
 `;
 
-export const OpenDatePickerButton = styled(RectButton)`
-  height: 46px;
+export const CreateAppointmentButton = styled(RectButton)<
+  AppointmentButtonProps
+>`
+  height: 50px;
   background: #ff9000;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
-  margin: 0 24px;
+  margin: 0 24px 24px;
+  opacity: ${props => (props.isEnabled ? 1 : 0.3)};
 `;
 
-export const OpenDatePickerText = styled.Text`
+export const CreateAppointmentButtonText = styled.Text`
   font-family: medium;
-  font-size: 16px;
+  font-size: 18px;
   color: #232129;
+`;
+
+export const Schedule = styled.View`
+  padding: 24px 0 16px;
+`;
+
+export const Section = styled.View`
+  margin-bottom: 24px;
+`;
+
+export const SectionTitle = styled.Text`
+  font-size: 18px;
+  color: #999591;
+  font-family: regular;
+  margin: 0 24px 12px;
+`;
+
+export const SectionContent = styled.ScrollView.attrs({
+  showsHorizontalScrollIndicator: false,
+  horizontal: true,
+  contentContainerStyle: {
+    paddingHorizontal: 24,
+  },
+})``;
+
+export const Hour = styled(RectButton)<HourPops>`
+  padding: 12px;
+  background: ${props => (props.selected ? '#ff9000' : '#3e3b47')};
+  border-radius: 10px;
+  margin-right: 8px;
+  opacity: ${props => (props.available ? 1 : 0.3)};
+`;
+
+export const HourText = styled.Text<Pick<HourPops, 'selected'>>`
+  color: ${props => (props.selected ? '#232129' : '#f4ede8')};
+  font-family: regular;
+  font-size: 16px;
 `;
