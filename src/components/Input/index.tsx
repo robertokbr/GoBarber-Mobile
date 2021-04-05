@@ -13,6 +13,7 @@ import * as S from './styles';
 interface InputProps extends TextInputProps {
   name: string;
   icon: string;
+  containerStyle?: Object;
 }
 
 interface InputValueReference {
@@ -24,7 +25,7 @@ interface InputRef {
 }
 
 const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
-  { icon, name, ...rest },
+  { icon, name, containerStyle, ...rest },
   ref,
 ) => {
   const inputElementRef = useRef<any>(null);
@@ -57,7 +58,11 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   }, []);
 
   return (
-    <S.Container isFocused={isFocused} isErrored={!!error}>
+    <S.Container
+      style={containerStyle}
+      isFocused={isFocused}
+      isErrored={!!error}
+    >
       <S.Icon
         name={icon}
         size={20}
