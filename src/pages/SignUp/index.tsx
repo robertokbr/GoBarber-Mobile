@@ -19,18 +19,18 @@ import Input from '../../components/Input';
 import getValidationErrors from '../../utils/getValidationErrors';
 import api from '../../services/api';
 
+interface SingUpFormData {
+  name: string;
+  email: string;
+  pasword: string;
+}
+
 const SignUp: React.FC = () => {
   const navigation = useNavigation();
   const formRef = useRef<FormHandles>(null);
   const emailInputRef = useRef(null);
   const nameInputref = useRef(null);
   const passwordInputRef = useRef(null);
-
-  interface SingUpFormData {
-    name: string;
-    email: string;
-    pasword: string;
-  }
 
   const handleSubmit = useCallback(
     async (data: SingUpFormData) => {
